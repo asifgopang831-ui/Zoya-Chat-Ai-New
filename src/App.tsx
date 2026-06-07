@@ -35,7 +35,7 @@ interface ChatMessage {
 export default function App() {
   const [appState, setAppState] = useState<AppState>("idle");
   const [messages, setMessages] = useState<ChatMessage[]>(() => {
-    const saved = localStorage.getItem("abdul_samad_chat_history");
+    const saved = localStorage.getItem("rana_iftakhar_chat_history");
     if (saved) {
       try {
         return JSON.parse(saved);
@@ -49,7 +49,7 @@ export default function App() {
 
   useEffect(() => {
     messagesRef.current = messages;
-    localStorage.setItem("abdul_samad_chat_history", JSON.stringify(messages));
+    localStorage.setItem("rana_iftakhar_chat_history", JSON.stringify(messages));
   }, [messages]);
 
   const [isMuted, setIsMuted] = useState(false);
@@ -224,7 +224,7 @@ export default function App() {
   const clearHistory = () => {
     if (confirm("Purge all neural logs? This action is irreversible.")) {
       setMessages([]);
-      localStorage.removeItem("abdul_samad_chat_history");
+      localStorage.removeItem("rana_iftakhar_chat_history");
       resetZoyaSession();
     }
   };
@@ -268,7 +268,7 @@ export default function App() {
           <div className="relative">
             <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-rose-500 via-indigo-600 to-cyan-500 p-[1.5px] shadow-[0_0_30px_rgba(244,63,94,0.3)] transition-transform group-hover:scale-110">
               <div className="w-full h-full rounded-[11px] sm:rounded-[14.5px] bg-black flex items-center justify-center font-black text-xl sm:text-2xl text-white">
-                A
+                R
               </div>
             </div>
             {isSessionActive && (
@@ -277,7 +277,7 @@ export default function App() {
           </div>
           <div>
             <h1 className="text-lg sm:text-2xl md:text-3xl font-black tracking-tighter text-white flex items-center gap-2">
-              ABDUL SAMAD <span className="text-[8px] sm:text-[10px] bg-cyan-500/10 text-cyan-400 border border-cyan-400/20 px-1.5 py-0.5 rounded-md tracking-widest font-mono">ASSISTANT_VX</span>
+              RANA IFTAKHAR <span className="text-[8px] sm:text-[10px] bg-cyan-500/10 text-cyan-400 border border-cyan-400/20 px-1.5 py-0.5 rounded-md tracking-widest font-mono">ASSISTANT_VX</span>
             </h1>
             <p className="text-[7px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-white/20 font-black">Neural Assistant Interface</p>
           </div>
