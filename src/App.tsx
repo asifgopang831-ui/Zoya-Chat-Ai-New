@@ -258,16 +258,16 @@ export default function App() {
       </AnimatePresence>
 
       {/* Header */}
-      <header className="relative w-full flex justify-between items-center z-50 px-5 py-4 sm:px-8 sm:py-6 md:px-12 lg:px-20 border-none transition-all">
+      <header className="relative w-full flex justify-between items-center z-50 px-3 py-3 sm:px-8 sm:py-6 md:px-12 lg:px-20 border-none transition-all shrink-0">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-3 sm:gap-5 group cursor-pointer"
+          className="flex items-center gap-2 sm:gap-5 group cursor-pointer min-w-0"
           onClick={() => window.location.reload()}
         >
-          <div className="relative">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-rose-500 via-indigo-600 to-cyan-500 p-[1.5px] shadow-[0_0_30px_rgba(244,63,94,0.3)] transition-transform group-hover:scale-110">
-              <div className="w-full h-full rounded-[11px] sm:rounded-[14.5px] bg-black flex items-center justify-center font-black text-xl sm:text-2xl text-white">
+          <div className="relative shrink-0">
+            <div className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-rose-500 via-indigo-600 to-cyan-500 p-[1.5px] shadow-[0_0_30px_rgba(244,63,94,0.3)] transition-transform group-hover:scale-110">
+              <div className="w-full h-full rounded-[11px] sm:rounded-[14.5px] bg-black flex items-center justify-center font-black text-lg sm:text-2xl text-white">
                 R
               </div>
             </div>
@@ -275,15 +275,15 @@ export default function App() {
               <span className="absolute -top-0.5 -right-0.5 w-3 h-3 sm:w-4 sm:h-4 bg-emerald-500 border-2 border-black rounded-full animate-pulse" />
             )}
           </div>
-          <div>
-            <h1 className="text-lg sm:text-2xl md:text-3xl font-black tracking-tighter text-white flex items-center gap-2">
-              RANA IFTAKHAR <span className="text-[8px] sm:text-[10px] bg-cyan-500/10 text-cyan-400 border border-cyan-400/20 px-1.5 py-0.5 rounded-md tracking-widest font-mono">ASSISTANT_VX</span>
+          <div className="min-w-0">
+            <h1 className="text-sm min-[400px]:text-lg sm:text-2xl md:text-3xl font-black tracking-tighter text-white flex items-center gap-2 whitespace-nowrap">
+              RANA IFTAKHAR <span className="hidden min-[400px]:inline-block text-[8px] sm:text-[10px] bg-cyan-500/10 text-cyan-400 border border-cyan-400/20 px-1.5 py-0.5 rounded-md tracking-widest font-mono">ASSISTANT_VX</span>
             </h1>
             <p className="text-[7px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-white/20 font-black">Neural Assistant Interface</p>
           </div>
         </motion.div>
 
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex items-center gap-1.5 sm:gap-4 shrink-0">
           <AnimatePresence>
             {deferredPrompt && (
               <motion.button
@@ -293,9 +293,9 @@ export default function App() {
                 whileHover={{ scale: 1.1, backgroundColor: "rgba(34,211,238,0.15)" }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleInstallClick}
-                className="p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.2)] flex items-center gap-2 group overflow-hidden"
+                className="p-2 sm:p-3.5 rounded-xl sm:rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.2)] flex items-center gap-2 group overflow-hidden"
               >
-                <Download size={18} className="sm:w-[22px] sm:h-[22px]" />
+                <Download size={16} className="sm:w-[22px] sm:h-[22px]" />
                 <span className="hidden md:block text-[10px] font-black uppercase tracking-widest overflow-hidden whitespace-nowrap">Install App</span>
               </motion.button>
             )}
@@ -305,27 +305,27 @@ export default function App() {
             whileHover={{ scale: 1.1, backgroundColor: "rgba(99,102,241,0.15)" }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setShowVoiceSelector(!showVoiceSelector)}
-            className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl transition-all border ${showVoiceSelector ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400 shadow-[0_0_20px_rgba(99,102,241,0.2)]' : 'bg-white/5 border-white/10 text-white/30'}`}
+            className={`p-2 sm:p-3.5 rounded-xl sm:rounded-2xl transition-all border ${showVoiceSelector ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400 shadow-[0_0_20px_rgba(99,102,241,0.2)]' : 'bg-white/5 border-white/10 text-white/30'}`}
           >
-            <BrainCircuit size={18} className="sm:w-[22px] sm:h-[22px]" />
+            <BrainCircuit size={16} className="sm:w-[22px] sm:h-[22px]" />
           </motion.button>
 
           <motion.button
             whileHover={{ scale: 1.1, backgroundColor: "rgba(99,102,241,0.15)" }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setShowHistory(!showHistory)}
-            className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl transition-all border ${showHistory ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400 shadow-[0_0_20px_rgba(99,102,241,0.2)]' : 'bg-white/5 border-white/10 text-white/30'}`}
+            className={`p-2 sm:p-3.5 rounded-xl sm:rounded-2xl transition-all border ${showHistory ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400 shadow-[0_0_20px_rgba(99,102,241,0.2)]' : 'bg-white/5 border-white/10 text-white/30'}`}
           >
-            <MessageSquare size={18} className="sm:w-[22px] sm:h-[22px]" />
+            <MessageSquare size={16} className="sm:w-[22px] sm:h-[22px]" />
           </motion.button>
           
           <motion.button
             whileHover={{ scale: 1.1, backgroundColor: isMuted ? "rgba(244,63,94,0.2)" : "rgba(34,211,238,0.15)" }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsMuted(!isMuted)}
-            className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl transition-all border ${isMuted ? 'bg-rose-500/20 border-rose-500/50 text-rose-400 shadow-[0_0_20px_rgba(244,63,94,0.2)]' : 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.2)]'}`}
+            className={`p-2 sm:p-3.5 rounded-xl sm:rounded-2xl transition-all border ${isMuted ? 'bg-rose-500/20 border-rose-500/50 text-rose-400 shadow-[0_0_20px_rgba(244,63,94,0.2)]' : 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.2)]'}`}
           >
-            {isMuted ? <VolumeX size={18} className="sm:w-[22px] sm:h-[22px]" /> : <Volume2 size={18} className="sm:w-[22px] sm:h-[22px]" />}
+            {isMuted ? <VolumeX size={16} className="sm:w-[22px] sm:h-[22px]" /> : <Volume2 size={16} className="sm:w-[22px] sm:h-[22px]" />}
           </motion.button>
         </div>
       </header>
@@ -554,7 +554,7 @@ export default function App() {
       </main>
 
       {/* Controller Block */}
-      <footer className="relative w-full pb-8 sm:pb-14 md:pb-24 px-4 sm:px-6 flex flex-col items-center z-50">
+      <footer className="relative w-full pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:pb-14 md:pb-24 px-3 sm:px-6 flex flex-col items-center z-50 shrink-0">
         
         <AnimatePresence>
           {showTextInput && (
@@ -588,12 +588,12 @@ export default function App() {
           )}
         </AnimatePresence>
 
-        <div className="flex items-center gap-4 sm:gap-8 md:gap-12">
+        <div className="flex items-center gap-3 sm:gap-8 md:gap-12">
           <motion.button
             whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.08)" }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setShowTextInput(!showTextInput)}
-            className={`p-4 sm:p-7 rounded-[22px] sm:rounded-[35px] transition-all border ${showTextInput ? 'bg-brand-rose/20 border-brand-rose/60 text-brand-rose' : 'bg-white/5 border-white/10 text-white/30'}`}
+            className={`p-3.5 sm:p-7 rounded-[22px] sm:rounded-[35px] transition-all border ${showTextInput ? 'bg-brand-rose/20 border-brand-rose/60 text-brand-rose' : 'bg-white/5 border-white/10 text-white/30'}`}
           >
             {showTextInput ? <X size={20} className="sm:w-[28px] sm:h-[28px]" /> : <Keyboard size={20} className="sm:w-[28px] sm:h-[28px]" />}
           </motion.button>
@@ -603,7 +603,7 @@ export default function App() {
             whileTap={{ scale: 0.95 }}
             onClick={toggleListening}
             className={`
-              relative group flex items-center gap-4 sm:gap-10 px-8 py-5 sm:px-16 sm:py-8 rounded-3xl sm:rounded-[45px] font-black tracking-[0.2em] sm:tracking-[0.5em] italic transition-all duration-700 shadow-2xl overflow-hidden border-2
+              relative group flex items-center gap-4 sm:gap-10 px-6 py-4 min-[400px]:px-8 min-[400px]:py-5 sm:px-16 sm:py-8 rounded-3xl sm:rounded-[45px] font-black tracking-[0.2em] sm:tracking-[0.5em] italic transition-all duration-700 shadow-2xl overflow-hidden border-2
               ${
                 isSessionActive
                   ? "bg-brand-rose/10 text-brand-rose border-brand-rose/50 shadow-[0_0_40px_rgba(244,63,94,0.3)]"
@@ -640,7 +640,7 @@ export default function App() {
             whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.08)" }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setShowHistory(!showHistory)}
-            className={`p-4 sm:p-7 rounded-[22px] sm:rounded-[35px] transition-all border ${showHistory ? 'bg-brand-indigo/20 border-brand-indigo/60 text-brand-indigo' : 'bg-white/5 border-white/10 text-white/30'}`}
+            className={`p-3.5 sm:p-7 rounded-[22px] sm:rounded-[35px] transition-all border ${showHistory ? 'bg-brand-indigo/20 border-brand-indigo/60 text-brand-indigo' : 'bg-white/5 border-white/10 text-white/30'}`}
           >
             <MessageSquare size={20} className="sm:w-[28px] sm:h-[28px]" />
           </motion.button>

@@ -37,7 +37,7 @@ export default function Visualizer({ state }: VisualizerProps) {
       />
 
       {/* Main Rings System */}
-      <div className="relative flex items-center justify-center w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px]">
+      <div className="relative flex items-center justify-center w-[200px] h-[200px] min-[400px]:w-[240px] min-[400px]:h-[240px] sm:w-[300px] sm:h-[300px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px]">
         
         {/* Tech Grid Overlays */}
         <div className="absolute inset-0 bg-grid opacity-5 rounded-full" />

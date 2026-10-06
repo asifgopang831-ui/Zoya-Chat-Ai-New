@@ -17,6 +17,19 @@
   html, body, #root {
     @apply h-full w-full m-0 p-0 overflow-hidden bg-[#020202] text-white antialiased;
   }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+  input, textarea {
+    -webkit-user-select: text;
+    user-select: text;
+  }
 }
 
 @layer components {

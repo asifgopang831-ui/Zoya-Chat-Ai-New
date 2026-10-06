@@ -13,11 +13,11 @@ export default function PermissionModal({ onClose }: PermissionModalProps) {
         initial={{ opacity: 0, scale: 0.9, y: 40 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 40 }}
-        className="w-full max-w-lg glass-dark rounded-[40px] p-10 shadow-[0_40px_120px_rgba(0,0,0,0.8)] flex flex-col items-center text-center relative overflow-hidden border border-white/10"
+        className="w-full max-w-lg glass-dark rounded-[28px] sm:rounded-[40px] p-6 sm:p-10 shadow-[0_40px_120px_rgba(0,0,0,0.8)] flex flex-col items-center text-center relative overflow-hidden border border-white/10"
       >
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-rose-500 to-transparent opacity-50" />
         
-        <div className="w-24 h-24 rounded-3xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-10 relative">
+        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-6 sm:mb-10 relative">
           <MicOff size={40} className="text-rose-400 relative z-10" />
           <motion.div 
             animate={{ opacity: [0.1, 0.4, 0.1], scale: [1, 1.2, 1] }}
@@ -26,15 +26,15 @@ export default function PermissionModal({ onClose }: PermissionModalProps) {
           />
         </div>
 
-        <h2 className="text-3xl font-black text-white mb-4 tracking-tight px-4">
+        <h2 className="text-2xl sm:text-3xl font-black text-white mb-4 tracking-tight px-2 sm:px-4">
           Neural Uplink <span className="text-rose-500">Severed</span>
         </h2>
         
-        <p className="text-rose-50/40 text-sm mb-10 leading-relaxed max-w-[320px] font-medium uppercase tracking-wider">
+        <p className="text-rose-50/40 text-xs sm:text-sm mb-6 sm:mb-10 leading-relaxed max-w-[320px] font-medium uppercase tracking-wider">
           Microphone access is required to establish a stable connection with Zoya's consciousness.
         </p>
 
-        <div className="bg-white/[0.03] border border-white/5 rounded-3xl p-6 text-left w-full mb-10 backdrop-blur-xl">
+        <div className="bg-white/[0.03] border border-white/5 rounded-3xl p-4 sm:p-6 text-left w-full mb-6 sm:mb-10 backdrop-blur-xl">
           <div className="flex items-center gap-2 mb-4">
             <ShieldAlert size={14} className="text-indigo-400" />
             <p className="text-[10px] text-indigo-400 font-black uppercase tracking-[0.3em]">Restoration Protocol</p>
